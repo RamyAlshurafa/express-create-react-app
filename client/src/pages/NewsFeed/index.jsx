@@ -1,7 +1,17 @@
-import React, { Component } from 'react';
+import React, { Fragment } from 'react';
 
-const Home = { newsItems } => {
-  const newsCards = newsItems.map(item => <h2>{item.header}</h2> <br><p>{item.text}</p>)
+const NewsFeed = ({ newsItems }) => {
+  const newsCards = newsItems.map(item => {
+    return (
+      <Fragment>
+        <h2>{item.title}</h2>
+        <p>
+          {item.text}
+        </p>
+      </Fragment>
+    )
+  })
+
   return (
     <div className="">
       <h1>
@@ -9,8 +19,8 @@ const Home = { newsItems } => {
         </h1>
       {newsCards}
     </div>
-    );
+  );
 }
 
 
-export default Home;
+export default NewsFeed;
