@@ -27,4 +27,4 @@ app.get('/api/v1/news', (req, res, next) => {
   return res.json(news)
 })
 
-app.listen(9000);
+app.listen(process.env.PORT || 9000);
